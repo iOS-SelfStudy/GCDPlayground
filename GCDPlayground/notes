@@ -1,0 +1,77 @@
+* According to Apple:
+GCD provides and manages FIFO queues to which your application can submit tasks in the form of block objects. Work submitted to dispatch queues are executed on a pool of threads fully managed by the system. No guarantee is made as to the thread on which a task executes.
+
+
+* When dealing with GCD, there are 3 types of queues:
+
+1- The Main Queue:
+This Queue has the highest priority of all , and it runs on the main thread.
+All UI updates should be done on this thread or otherwise lagging and weird crashes will occur in your application.
+
+
+
+2- The Global Queue:
+This Queue is separated into 4 main types and a default type according to QOS(Quality of Service), from highest priority to lowest:
+
+1- userInteractive : Work is virtually instantaneous. Similar to main thread.
+2- userInitiated : Work is nearly instantaneous, such as a few seconds or less.
+3- default: don’t use it usually , the type will be inferred by the system
+4- utility: Work takes a few seconds to a few minutes.
+5- background: Work takes significant time, such as minutes or hours.
+
+Both, utility and background threads should be used for heavy operations that needs time in order not to block the main thread.
+
+
+3- Custom Queues:
+Custom queues are queues that you can create on your own and give whatever QOS and attributes you want
+
+
+
+
+
+* Sync means that no other task will start until the sync operation finishes , while Async will allow other tasks to start even if it didn’t finish yet.
+
+
+* in DispatchQueue about the param that called  attribute:
+ - There is not .serial attribute anymore, but dispatch queues are by default serial, unless you specify the .concurrent attribute:
+
+ -The attributes parameter can also accept another value named initiallyInactive. By using that, the execution of the tasks doesn’t start automatically, instead the developer has to trigger the execution
+
+
+*A DispatchWorkItem is a block of code that can be dispatched on any queue and therefore the contained code to be executed on a background, or the main thread. Think of it really simply; as a bunch of code that you just invoke, instead of writing the code blocks in the way we’ve seen in the previous parts.
+
+
+*How Semaphores Work
+Three steps:
+
+-Whenever we would like to use one shared resource, we send a request to its semaphore;
+-Once the semaphore gives us the green light (see what I did here?) we can assume that the resource is ours and we can use it;
+-Once the resource is no longer necessary, we let the semaphore know by sending him a signal, allowing him to assign the resource to another thread.
+
+
+*Note that the semaphore is not physically giving us anything, the resource has to be in the thread’s scope already, we just use the resource only between our request and release calls.
+
+
+
+
+In wome case,  the processor has decided to execute the low priority thread first.
+
+When this happens, the high priority thread must wait the low priority thread to finish! This is ok, it can happen. The problem is that the low priority thread has low priority even when one high priority thread is waiting for him: this is called Priority Inversion.
+
+In other programming concepts different than the Semaphore, when this happens the low priority thread will temporarily inherit the priority of the highest priority thread that is waiting on him: this is called Priority Inheritance.
+
+With Semaphores this is not the case because, actually, anybody can call the signal() function (not only the thread that is currently using the resource).
+
+
+
+
+
+
+
+
+*Thread Starvation
+To make things even worse, let’s imagine that between our high & low priority threads there are 1000 more middle-priority threads.
+
+If we have a case of Priority Inversion like above, the high priority thread must wait for the low priority thread, but, most of the time, the processor will execute the middle priority threads, as they have higher priority than our low priority one.
+
+In this scenario our high priority thread is being starved of CPU time (hence the concept of Starvation).

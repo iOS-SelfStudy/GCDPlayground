@@ -14,6 +14,11 @@
 		A292A21C2508E5B200121B56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A292A21B2508E5B200121B56 /* Assets.xcassets */; };
 		A292A21F2508E5B200121B56 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A292A21D2508E5B200121B56 /* LaunchScreen.storyboard */; };
 		A292A22A2508E5B200121B56 /* GCDPlaygroundTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A292A2292508E5B200121B56 /* GCDPlaygroundTests.swift */; };
+		A292A2352508EF7B00121B56 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = A292A2342508EF7B00121B56 /* Service.swift */; };
+		A292A2372508F3B200121B56 /* BatchingTasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = A292A2362508F3B200121B56 /* BatchingTasks.swift */; };
+		A292A2392508F66500121B56 /* PlayGround.swift in Sources */ = {isa = PBXBuildFile; fileRef = A292A2382508F66500121B56 /* PlayGround.swift */; };
+		A292A23B2508F93900121B56 /* notes in Resources */ = {isa = PBXBuildFile; fileRef = A292A23A2508F93900121B56 /* notes */; };
+		A292A23E250923E400121B56 /* Semaphore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A292A23D250923E400121B56 /* Semaphore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +43,11 @@
 		A292A2252508E5B200121B56 /* GCDPlaygroundTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GCDPlaygroundTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A292A2292508E5B200121B56 /* GCDPlaygroundTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCDPlaygroundTests.swift; sourceTree = "<group>"; };
 		A292A22B2508E5B200121B56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A292A2342508EF7B00121B56 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		A292A2362508F3B200121B56 /* BatchingTasks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatchingTasks.swift; sourceTree = "<group>"; };
+		A292A2382508F66500121B56 /* PlayGround.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayGround.swift; sourceTree = "<group>"; };
+		A292A23A2508F93900121B56 /* notes */ = {isa = PBXFileReference; lastKnownFileType = text; path = notes; sourceTree = "<group>"; };
+		A292A23D250923E400121B56 /* Semaphore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Semaphore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +96,11 @@
 				A292A21B2508E5B200121B56 /* Assets.xcassets */,
 				A292A21D2508E5B200121B56 /* LaunchScreen.storyboard */,
 				A292A2202508E5B200121B56 /* Info.plist */,
+				A292A2342508EF7B00121B56 /* Service.swift */,
+				A292A2362508F3B200121B56 /* BatchingTasks.swift */,
+				A292A2382508F66500121B56 /* PlayGround.swift */,
+				A292A23D250923E400121B56 /* Semaphore.swift */,
+				A292A23A2508F93900121B56 /* notes */,
 			);
 			path = GCDPlayground;
 			sourceTree = "<group>";
@@ -182,6 +197,7 @@
 			files = (
 				A292A21F2508E5B200121B56 /* LaunchScreen.storyboard in Resources */,
 				A292A21C2508E5B200121B56 /* Assets.xcassets in Resources */,
+				A292A23B2508F93900121B56 /* notes in Resources */,
 				A292A21A2508E5AE00121B56 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -200,8 +216,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A292A2392508F66500121B56 /* PlayGround.swift in Sources */,
 				A292A2172508E5AE00121B56 /* ViewController.swift in Sources */,
+				A292A2372508F3B200121B56 /* BatchingTasks.swift in Sources */,
+				A292A2352508EF7B00121B56 /* Service.swift in Sources */,
 				A292A2132508E5AE00121B56 /* AppDelegate.swift in Sources */,
+				A292A23E250923E400121B56 /* Semaphore.swift in Sources */,
 				A292A2152508E5AE00121B56 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
