@@ -23,6 +23,11 @@ class Playground {
             }
         }
         // 2
+        // main is highest piriorty
+        // then now we hold the queue to wait for main
+        //main request the queue who is already hold
+        // we have a explosion or deadlock
+        // soution is to make main async
         DispatchQueue.main.sync {
             queue.sync {
                 print("Done")
@@ -127,7 +132,7 @@ class Playground {
         
         
         for _ in 0...10 {
-            print("this is  the main thread")
+            print("this is  the main thread ")
         }
     }
     
@@ -235,6 +240,13 @@ class Playground {
     
     func globalQueueWithMainQueue() {
         let globalQueue = DispatchQueue.global(qos: .userInitiated)
+        
+        globalQueue.async {
+            
+            DispatchQueue.main.async {
+                print("in main queue")
+            }
+        }
     }
     
 }

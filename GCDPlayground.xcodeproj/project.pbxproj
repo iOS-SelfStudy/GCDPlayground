@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A266F875250A1AE700846F01 /* DeadLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A266F874250A1AE700846F01 /* DeadLock.swift */; };
 		A292A2132508E5AE00121B56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A292A2122508E5AE00121B56 /* AppDelegate.swift */; };
 		A292A2152508E5AE00121B56 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A292A2142508E5AE00121B56 /* SceneDelegate.swift */; };
 		A292A2172508E5AE00121B56 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A292A2162508E5AE00121B56 /* ViewController.swift */; };
@@ -32,6 +33,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A266F874250A1AE700846F01 /* DeadLock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeadLock.swift; sourceTree = "<group>"; };
 		A292A20F2508E5AE00121B56 /* GCDPlayground.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GCDPlayground.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A292A2122508E5AE00121B56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A292A2142508E5AE00121B56 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 				A292A2362508F3B200121B56 /* BatchingTasks.swift */,
 				A292A2382508F66500121B56 /* PlayGround.swift */,
 				A292A23D250923E400121B56 /* Semaphore.swift */,
+				A266F874250A1AE700846F01 /* DeadLock.swift */,
 				A292A23A2508F93900121B56 /* notes */,
 			);
 			path = GCDPlayground;
@@ -216,6 +219,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A266F875250A1AE700846F01 /* DeadLock.swift in Sources */,
 				A292A2392508F66500121B56 /* PlayGround.swift in Sources */,
 				A292A2172508E5AE00121B56 /* ViewController.swift in Sources */,
 				A292A2372508F3B200121B56 /* BatchingTasks.swift in Sources */,

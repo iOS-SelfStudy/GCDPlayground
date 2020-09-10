@@ -8,7 +8,10 @@
 
 import Foundation
 class BatchingTasks {
-    /*The purpose of dispatch groups is to let you know when several independent tasks have completed.*/
+    /*The purpose of dispatch groups is to let you know when several independent tasks have completed.
+     DispatchGroup
+     A group of tasks that you monitor as a single unit.
+     */
     
     func doGrouping() {
         let queue = DispatchQueue(label: "Serial queue")
@@ -42,6 +45,9 @@ func dispatchGroupNotify(){
     let queue1 = DispatchQueue(label: "com.kentakodashima.app.sampleQueue1")
     let queue2 = DispatchQueue(label: "com.kentakodashima.app.sampleQueue2")
     let queue3 = DispatchQueue(label: "com.kentakodashima.app.sampleQueue3")
+    
+    
+    let lastQueue = DispatchQueue(label: "last.one")
     // Put all queues into dispatchGroup
     queue1.async(group: dispatchGroup) {
         sleep(1)
@@ -56,12 +62,13 @@ func dispatchGroupNotify(){
       print("Queue3 complete.")
     }
     // After the queues in dispatchGroup are all done, back to the main thread
-    dispatchGroup.notify(queue: DispatchQueue.main) {
-      print("All tasks are done.")
+    dispatchGroup.notify(queue: lastQueue) {
+        sleep(1)
+      print("In last queue")
     }
 }
     
-    /*we can specify when to enter into the group tasks and when to leave. In the example below, print(result) is executed after all queues which are in between dispatchGroup.enter() and dispatchGroup.leave() are completed.*/
+    /*we can specify when to enter into the group tasks and when to leave. dispatchGroup.enter() and dispatchGroup.leave() are completed.*/
         func specifyOnThreadEnterBydispatchGroup() {
             DispatchQueue.global(qos: .default).async {
               var result = 0
@@ -74,14 +81,16 @@ func dispatchGroupNotify(){
                 result += element
               }
              
-               
+               print("wait 5 seconds before leave")
+                sleep(5)
+                
               dispatchGroup.leave()
              print("leave")
                 
           
              
               DispatchQueue.main.async {
-                print(result)
+                print("result of the group \(result)")
               }
             }
         }

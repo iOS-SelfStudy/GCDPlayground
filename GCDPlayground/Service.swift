@@ -12,7 +12,7 @@ class Service {
     let queue = DispatchQueue(label: "Some serial queue")
     
     /*DispatchWorkItem is used to store a task on a dispatch queue for later use, and you can perform operations several operations on it, you can even cancel the task if it is not required later in the code.*/
-    func doSomething() {
+    func doNetworkItem() {
         
         
         let newWorkItem = DispatchWorkItem {
