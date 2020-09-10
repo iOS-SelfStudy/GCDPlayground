@@ -28,7 +28,9 @@ class ViewController: UIViewController {
         // pg.doManyThreadsInSameCustomQueueinactiveQueue()
         // pg.applyDelayOnQueue()
         // pg.doManyThreadsInSameCustomQueueConcurrent()
-        group.specifyOnThreadEnterBydispatchGroup()
+       // group.specifyOnThreadEnterBydispatchGroup()
+        //group.dispatchGroupNotify()
+        group.getDiffrenceBetweenTwoTasks()
         // sem.applySemaphore()
         // sem.applyTwoSemaphores()
         
